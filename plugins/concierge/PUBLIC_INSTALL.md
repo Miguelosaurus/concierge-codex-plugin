@@ -41,7 +41,8 @@ Codex task. If the browser does not open or the computer stays offline, use
 When a new release is available, run these commands in Terminal:
 
 ```sh
-codex plugin marketplace upgrade concierge
+codex plugin marketplace remove concierge
+codex plugin marketplace add https://github.com/Miguelosaurus/concierge-codex-plugin --ref v0.1.0-alpha.83
 codex plugin add concierge@concierge
 ```
 

@@ -14,8 +14,19 @@ Load [setup-branches.md](references/setup-branches.md) when the user asks for pr
 For “Help me finish setting up Concierge with a short onboarding call,” a first setup request, or an explicit request to configure calls, load [finish-setup-conversation.md](references/finish-setup-conversation.md). It completes durable prerequisites, asks for explicit authorization before one short owner call, and keeps the optional preference interview separate from what `concierge_get_setup_status` proves.
 
 1. Read status and identify the one current state/action.
+   When the requested outcome is to connect **this computer**, account-level
+   readiness is only background state. It may describe another computer on the
+   same Concierge account and cannot prove the current computer is connected.
+   Do not satisfy that request from `concierge_get_setup_status`,
+   `concierge_get_account_status`, or `concierge_get_capabilities` alone.
 2. If status asks for target or computer readiness, use the supported Codex path. **Current beta phone target: Codex only**, and only a paired native host that is ready can carry live phone work.
 3. When local readiness is required, tell the user to open Codex on the desired computer with the installed Concierge plugin selected and active and issue exactly **“Connect this computer”**. Browser setup cannot install the plugin and ordinary ChatGPT cannot execute the local lifecycle hook. Keep pairing/device/bearer material out of chat.
+   If Concierge was installed or enabled during the current task, its lifecycle
+   hook did not run for the prompt that preceded installation. End the install
+   handoff by asking the user to open a fresh Codex task with Concierge active
+   and send exactly **“Connect this computer”**. Never replace that fresh local
+   hook invocation with account-status reads or claim the current computer is
+   connected because the account is already ready.
 4. When the state requires entitlement, owner possession, phone identity, or capability reconciliation, perform only the exact supported next action. Existing entitlement and retained identity are authoritative. Paid phone acquisition is outside the plugin: do not display plans, promote an upgrade, initiate a purchase, link to checkout or a setup URL that leads to purchase, search, quote, buy, or bypass that boundary. Never request payment material in chat.
 5. Require durable native readiness and adapter preflight before promising Voice. The native-host pairing and target-neutral native adapter preflight may use WorkOS device authorization, secure OS credential storage, service startup, and adapter checks; these are adapter internals, not consumer setup steps. A redirect, hook marker, physical DID feature, purchased-but-pending number, or model assertion is not readiness.
 6. Read status again and report its one truthful result. A pending/blocked state names the exact next action and reason; a ready state names only the capability actually ready. A zero-spend native preflight proves compatibility/readiness only, not entitlement, owner authority, phone inventory, PSTN capacity, or a live call.
@@ -44,4 +55,4 @@ Concierge MCP transport is request-scoped/stateless. For every supported consequ
 
 ## Completion criterion
 
-Setup is complete only when the final durable `concierge_get_setup_status` proves the requested account/owner/target/native-host/phone prerequisites are ready. A pending/blocked result may truthfully end the current interaction with one concrete next action and reason, but it is not setup completion. “Ready” never means a redirect, hook marker, purchased-but-pending number, physical DID capability, or model assertion.
+Setup is complete only when the final durable `concierge_get_setup_status` proves the requested account/owner/target/native-host/phone prerequisites are ready. A request to connect this computer additionally requires the trusted local hook flow and intended-computer verification; account-wide readiness can refer to another computer. A pending/blocked result may truthfully end the current interaction with one concrete next action and reason, but it is not setup completion. “Ready” never means a redirect, hook marker, purchased-but-pending number, physical DID capability, or model assertion.

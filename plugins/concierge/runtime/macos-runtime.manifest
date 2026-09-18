@@ -1,8 +1,8 @@
 concierge-macos-runtime-v1
-version	0.1.0-alpha.82
-source	91da2861507b7524108d8cefcf275c5e59754ab6
-gzip	ae938fd5ba00f5af63e417e0c7b69d3f950217b9bf9d19a5c11611b6b07e1ff1	37675541
-file	755	b7741138683dc3b42f56f0fa3740c70d1cff24af1fcdfe83a30081224972b5a9	113639904	concierge-host
+version	0.1.0-alpha.83
+source	e64fd699f5cd02031fbb475d534d952d2ee1fbc1
+gzip	49682550885cc4a844dd280e332309399a10aa821f4c6a2925fec57c6b0702f7	36529841
+file	755	ee0c1518f2d653c780b6407f216af2dc1bbf41f8abd72e9487c8c0e30a77c7fe	113639904	concierge-host
 file	755	e117e7fae332cbde79f9bae2a323efc5c7f17a6641f32f514cdab0cf18038bfb	53488	concierge-process-info
 file	644	6d77257c9d50361fcc2286ed02bbcb0ffda7ffa204211d05c51b21c22e3b02fe	41	node_modules/@roamhq/wrtc-darwin-arm64/index.js
 file	644	5cc6f296b2d6d0a3972a6df2fbb7aa903c4481c9e1939f9d6d0e7b390f09136e	326	node_modules/@roamhq/wrtc-darwin-arm64/package.json
@@ -28,4 +28,4 @@ file	644	c7a3d1001979e2b362874854ab294713cf8ac984260917aedf05333bd2f3952e	1978	n
 file	644	d09de46e2eb6224cc6891928684ff68bab32fb041fe41f071a4ca45ca53d5f24	2285	node_modules/@roamhq/wrtc/README.md
 file	644	53757fd44902c2ea9e06ca7a7e3975997b01c812453b75001891338d0cb2035d	964	node_modules/@roamhq/wrtc/types/index.d.ts
 file	644	997f1b5a6d4e56312893176aeec8d0fa68edbe1b8b0ad3b408c776b8f94b10e8	2201	node_modules/@roamhq/wrtc/types/nonstandard.d.ts
-file	644	e0067470814065300c72a0c05e9c5ee196b37a44c954243bdc4627305f6d37ae	6324	release-manifest.json
+file	644	9b171e5ffb6fa13c9c5a9a7618d82bf81e2bf8782ca891f539a2eb79128ccc04	6324	release-manifest.json

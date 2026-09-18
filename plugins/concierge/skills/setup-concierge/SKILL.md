@@ -5,6 +5,12 @@ description: Use when the user asks to set up or expand Concierge, inspect its e
 
 Concierge gives an **existing native orchestrator** a persistent PSTN Voice identity. It does not create a replacement voice agent.
 
+## Connect this computer
+
+For this request, first load [local-connection.md](references/local-connection.md).
+Its exact local-host check gates success. Account setup status and the selected
+host can describe another computer; they cannot establish this computer's state.
+
 ## Durable setup loop
 
 `concierge_get_setup_status` is the setup source of truth. Read it before explaining or continuing setup. **Follow the exact returned next action.** After every web or native handoff, call `concierge_get_setup_status` again. Treat one response as the current state: report the concrete pending/required action it names, or the readiness it proves, rather than inventing a parallel checklist.

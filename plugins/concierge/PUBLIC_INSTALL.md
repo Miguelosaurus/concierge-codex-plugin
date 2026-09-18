@@ -42,7 +42,7 @@ When a new release is available, run these commands in Terminal:
 
 ```sh
 codex plugin marketplace remove concierge
-codex plugin marketplace add https://github.com/Miguelosaurus/concierge-codex-plugin --ref v0.1.0-alpha.84
+codex plugin marketplace add https://github.com/Miguelosaurus/concierge-codex-plugin --ref v0.1.0-alpha.85
 codex plugin add concierge@concierge
 ```
 

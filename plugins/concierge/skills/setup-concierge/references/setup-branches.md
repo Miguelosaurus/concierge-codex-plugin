@@ -4,7 +4,7 @@ Load when the user asks for product behavior, a target comparison, a second comp
 
 For product explanations, use `concierge_search_product_docs` and `concierge_read_product_doc` when available. Preserve the returned availability qualifications. Authenticated setup/computer state takes precedence over a generic guide for the user's next action. Public help explains the product; it does not grant access to private work or start an effect workflow.
 
-Connecting another computer is separate from first-account setup. Point to [Computers](https://dialconcierge.com/account/computers), then have the user open Codex on the desired computer with the installed Concierge plugin active and say **“Connect this computer”**. Do not restart subscription, owner verification, or phone provisioning because one computer is already connected. Multiple connections do not synchronize native project histories or guarantee account-wide context access. Use current computer state and the owner-private work-context diagnostic when available rather than guessing which machine contains missing work.
+Connecting another computer is separate from first-account setup. Preserve the current onboarding tab; use [Computers](https://dialconcierge.com/account/computers) only for an explicit existing-computer management request. Have the user open Codex on the desired computer with the installed Concierge plugin active and say **“Connect this computer”**. Do not restart subscription, owner verification, or phone provisioning because one computer is already connected. Multiple connections do not synchronize native project histories or guarantee account-wide context access. Use current computer state and the owner-private work-context diagnostic when available rather than guessing which machine contains missing work.
 
 For a request about **this computer**, overall setup, capabilities, and account
 status are account-scoped and may describe a different connected computer.
@@ -22,8 +22,8 @@ the newly installed hook. Do not write hook trust into configuration, use a
 trust-bypass flag, or accept chat consent as the native review decision. If the
 review screen is unavailable, say so and stop rather than sending the user
 through a terminal setup checklist or inferring readiness from account state.
-After the hook flow, verify the intended computer through the connected-computer
-projection before describing it as connected.
+After the hook flow, follow [local-connection.md](local-connection.md): verify the intended computer through the connected-computer
+projection using fresh local host identity and online status. Return to the original onboarding tab and Continue.
 
 Workspace Agents are an optional managed-workspace adapter, never a consumer prerequisite. Do not substitute ordinary Chat Voice, GPT-Live/Realtime, a Workspace Agent, or another shadow supervisor for a missing selected-target adapter. The selected target determines where new Concierge phone work/context lives; Work and Codex histories remain separate.
 

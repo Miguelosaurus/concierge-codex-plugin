@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "product": "concierge-native-host",
-  "productVersion": "0.1.0-alpha.84",
+  "productVersion": "0.1.0-alpha.85",
   "protocolVersion": 1,
   "platform": "macos",
   "architecture": "arm64",
-  "buildSha": "5b43e6d40f4f04fa237d6210324f40fbc65a4ccb",
+  "buildSha": "2d4b4f43c8e015ed6c39e7a2ddbe77c216aff772",
   "packageFormat": "tar.gz",
   "minimumOsVersion": "13.0",
   "minimumNodeMajor": 22,
   "minimumCodexVersion": "0.146.0-alpha.3.1",
   "payloadFile": "payload/concierge-host",
-  "payloadSha256": "053d8bffb1b463f8919a1702b2da2d58e7ab10c201e63248c63fd1fccee57d1d",
+  "payloadSha256": "f2465e3910c6767e1df9ba93f85c3e3529a7410319db8bc02298d0a2350a8234",
   "runtimeFiles": [
     {
       "file": "payload/node_modules/@roamhq/wrtc-darwin-arm64/README.md",
@@ -121,7 +121,7 @@
     "productionReady": true,
     "verification": {
       "verifier": "concierge-native-host-signing-v1",
-      "payloadSha256": "053d8bffb1b463f8919a1702b2da2d58e7ab10c201e63248c63fd1fccee57d1d",
+      "payloadSha256": "f2465e3910c6767e1df9ba93f85c3e3529a7410319db8bc02298d0a2350a8234",
       "architectureVerified": true,
       "nativeAddonSha256": "af35771d88c49a340ece296d7be5586610932bbf5a90124c547a04521fe4c992",
       "nativeAddonArchitectureVerified": true,

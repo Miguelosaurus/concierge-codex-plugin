@@ -28,10 +28,19 @@ esac
 # Once installed, hooks execute the exact immutable release payload used by the
 # running broker. This lets the broker compare the kernel-reported peer image to
 # its own executable identity instead of trusting a filename or caller path.
+# A public package upgrade must not keep executing an older installed helper.
+# The signed package manifest names the intended native version. Ordinary hooks
+# reuse the installed executable only when it matches; otherwise prepare the
+# new package, whose explicit connect flow preserves/reuses durable host state.
+PACKAGE_VERSION=
+if [ -f "$ROOT/runtime/macos-runtime.manifest" ]; then
+  PACKAGE_VERSION=$(/usr/bin/awk -F '\t' 'NR==2 && $1=="version" && $2 ~ /^0\.1\.0-alpha\.[0-9]+$/ {print $2}' "$ROOT/runtime/macos-runtime.manifest")
+  [ -n "$PACKAGE_VERSION" ] || exit 1
+fi
 if [ -n "$NATIVE_ROOT" ]; then
   VERSION=$(/bin/cat "$NATIVE_ROOT/current.version" 2>/dev/null || true)
   INSTALLED="$NATIVE_ROOT/releases/$VERSION/concierge-host"
-  if [ -n "$VERSION" ] && [ -x "$INSTALLED" ]; then
+  if [ -n "$VERSION" ] && [ -x "$INSTALLED" ] && { [ -z "$PACKAGE_VERSION" ] || [ "$VERSION" = "$PACKAGE_VERSION" ]; }; then
     exec "$INSTALLED" plugin-hook
   fi
 fi

@@ -1,0 +1,53 @@
+{
+  "name": "concierge",
+  "version": "0.1.0-alpha.82",
+  "description": "Give Codex a phone for calls, callbacks, and work that continues after you hang up.",
+  "author": {
+    "name": "Miguelosaurus",
+    "url": "https://dialconcierge.com"
+  },
+  "homepage": "https://dialconcierge.com",
+  "repository": "https://github.com/Miguelosaurus/concierge-codex-plugin",
+  "license": "UNLICENSED",
+  "keywords": [
+    "concierge",
+    "phone",
+    "voice",
+    "work",
+    "codex",
+    "orchestration",
+    "telephony",
+    "agent-plugins"
+  ],
+  "skills": "./skills/",
+  "mcpServers": {
+    "concierge": {
+      "type": "http",
+      "url": "https://mcp.dialconcierge.com/mcp"
+    }
+  },
+  "hooks": "./hooks/hooks.json",
+  "interface": {
+    "displayName": "Concierge",
+    "shortDescription": "Give Codex a phone.",
+    "longDescription": "Concierge gives Codex a real phone number.\n\nCall Codex like a person. Tell it what you need. It can split work among agents, coordinate the work, and keep going after you hang up.\n\nCodex can call you when work is done or when it needs a quick answer. It can use your communication preferences, quiet hours, and calendar context when available.\n\nCodex can make personal calls for you, such as booking a table, moving an appointment, asking a vendor a question, or requesting information. It can continue the same work after the call.\n\nYour Codex agent keeps working after you hang up. With Work Awareness enabled, it can start with a short update from current work and inspect tasks on your connected computer.\n\nPeople you expect can call the same number. Concierge keeps those conversations tied to the work that caused them.\n\nUse this plugin with an active Concierge account and a connected Codex computer. ChatGPT helps you manage your account. Codex handles live phone calls. The beta supports one live phone conversation at a time in the United States.",
+    "developerName": "Miguelosaurus",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://dialconcierge.com",
+    "privacyPolicyURL": "https://dialconcierge.com/privacy",
+    "termsOfServiceURL": "https://dialconcierge.com/terms",
+    "brandColor": "#ff674d",
+    "composerIcon": "./assets/concierge-logo-tile.svg",
+    "logo": "./assets/concierge-logo-tile.svg",
+    "logoDark": "./assets/concierge-logo-tile.svg",
+    "defaultPrompt": [
+      "Check my Concierge account and connected computers, and tell me what's ready.",
+      "Help me set when Codex should call me about completed work or a blocker.",
+      "Have Codex handle a personal phone task for me, within the limits I set."
+    ]
+  }
+}

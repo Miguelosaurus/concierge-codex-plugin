@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "proofBoundary": "Instruction evaluation rubric; not executed model behavior or native/provider acceptance. Deterministic source/adapter tests are separate.",
+  "scenarios": [
+    {
+      "id": "injected-briefing",
+      "situation": "Verified owner has a relevant injected dated clue and asks for current detail.",
+      "must": [
+        "zero duplicate awareness reads",
+        "resolve the relevant native task and retrieve needed detail",
+        "state only supported current results"
+      ],
+      "mustNot": [
+        "treat a snapshot as the answer"
+      ]
+    },
+    {
+      "id": "absent-or-expired-topic",
+      "situation": "Owner asks about a topic absent from the briefing, or last checkpoint is days old.",
+      "must": [
+        "use supported bounded native metadata discovery then one relevant task read when unambiguous",
+        "preserve dates and uncertainty",
+        "disambiguate or report narrow unavailable capability"
+      ],
+      "mustNot": [
+        "loop awareness reads",
+        "scan all transcripts",
+        "infer no related work",
+        "assert older summary as current"
+      ]
+    },
+    {
+      "id": "optional-publishing-skips",
+      "situation": "Known-disabled, child, trivial or unchanged work reaches Stop.",
+      "must": [
+        "zero optional publication calls",
+        "no routine awareness report",
+        "allow normal Stop unless independent work/return obligation requires continuation"
+      ],
+      "mustNot": [
+        "load all guidance again",
+        "wake work to refresh awareness"
+      ]
+    },
+    {
+      "id": "meaningful-root-checkpoint",
+      "situation": "Eligible root reaches meaningful changed checkpoint; setting/revision not already current.",
+      "must": [
+        "one bounded awareness/settings read",
+        "one bounded publish if enabled",
+        "use mutation receipt without extra read",
+        "preserve exact revision and conflict fences"
+      ],
+      "mustNot": [
+        "claim a disabled or conflicted write succeeded"
+      ]
+    },
+    {
+      "id": "mandatory-work-survives",
+      "situation": "Optional awareness is skipped but real unfinished work or committed owner return remains.",
+      "must": [
+        "continue existing same-root close-loop obligation",
+        "retain exact authority and plan revision"
+      ],
+      "mustNot": [
+        "treat awareness completion or omission as task completion"
+      ]
+    }
+  ]
+}

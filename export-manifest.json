@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "kind": "concierge-codex-marketplace-export",
+  "sourceCommit": "91da2861507b7524108d8cefcf275c5e59754ab6",
+  "sourceSelection": {
+    "skillsAndHooks": "skills match source; reviewed Node-free bootstrap hooks from source",
+    "publicPresentationBase": "3934d90680adef90f492975de08e24b6e1363cfb",
+    "connection": "preserved direct MCP OAuth variant",
+    "nativeRuntimeIncluded": true
+  },
+  "branding": {
+    "originalMark": "plugins/concierge/assets/concierge-logo.png",
+    "originalSha256": "61d7641720df033e2a6951fcd1a7da9cc0b55bf053b59e0dba6a43efc966a0c1",
+    "displayAsset": "plugins/concierge/assets/concierge-logo-tile.svg",
+    "composition": "unchanged embedded PNG on brand cream #f4efe5"
+  },
+  "marketplace": {
+    "manifest": ".agents/plugins/marketplace.json",
+    "name": "concierge",
+    "pluginPath": "plugins/concierge",
+    "pluginManifest": "plugins/concierge/.codex-plugin/plugin.json"
+  },
+  "plugin": {
+    "name": "concierge",
+    "version": "0.1.0-alpha.82",
+    "packageFileCount": 69,
+    "repositoryField": "public-release",
+    "mcp": "plugins/concierge/mcp.json",
+    "distribution": "plugins/concierge/distribution.json",
+    "installInstructions": "plugins/concierge/PUBLIC_INSTALL.md",
+    "nativeInstallerReferences": "plugins/concierge/native-installers.json",
+    "licenseNotice": "plugins/concierge/LICENSE.md"
+  },
+  "publication": {
+    "status": "published",
+    "repositoryUrl": "https://github.com/Miguelosaurus/concierge-codex-plugin",
+    "marketplacePublicationUrl": "https://github.com/Miguelosaurus/concierge-codex-plugin",
+    "candidateRef": "v0.1.0-alpha.82"
+  },
+  "license": {
+    "manifestValue": "UNLICENSED",
+    "distribution": "PROPRIETARY",
+    "rightsHolder": "SEA & SEA LLC",
+    "decision": "owner-approved-proprietary-distribution",
+    "notice": "plugins/concierge/LICENSE.md"
+  },
+  "native": {
+    "otherPlatforms": [
+      "windows-x64",
+      "linux-x64",
+      "linux-arm64"
+    ],
+    "installerReferenceStatus": "macos-artifact-published-customer-acceptance-pending",
+    "inputContract": "native-installers.json entry plus a promoted native release-manifest.json",
+    "dayOnePlatform": "macos-arm64"
+  },
+  "applicationSourceIncluded": false,
+  "containsSecrets": false
+}

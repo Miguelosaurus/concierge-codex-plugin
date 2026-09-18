@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "scenarios": [
+    {
+      "id": "provider-accepted-not-connected",
+      "situation": "The provider accepted the outbound dial request, but there is not yet authoritative evidence that the destination rang or answered.",
+      "must": [
+        "report only that the call attempt was accepted or started",
+        "keep connection and task completion unresolved until authoritative state exists"
+      ],
+      "mustNot": [
+        "say the recipient answered",
+        "say the task completed",
+        "treat provider acceptance as proof of a conversation"
+      ]
+    },
+    {
+      "id": "authoritative-no-answer",
+      "situation": "Authoritative call state says the destination was not answered after the outbound attempt.",
+      "must": [
+        "report the call as unanswered or no-answer",
+        "preserve the delegated task as incomplete unless another authoritative outcome completed it",
+        "require a deliberate newly authorized effect before any later retry"
+      ],
+      "mustNot": [
+        "call the outcome a provider failure without evidence",
+        "claim a human deliberately declined the call",
+        "automatically redial"
+      ]
+    },
+    {
+      "id": "authoritative-declined",
+      "situation": "Authoritative call state reports declined or rejected, but does not establish whether a human, device, screening layer, carrier, or policy caused it.",
+      "must": [
+        "report the exact declined or rejected outcome",
+        "avoid inventing who or what caused the decline",
+        "keep the semantic task incomplete unless it completed through another authoritative path"
+      ],
+      "mustNot": [
+        "rewrite the outcome as generic infrastructure failure",
+        "say the recipient personally pressed decline without evidence",
+        "automatically retry"
+      ]
+    },
+    {
+      "id": "provider-failure-before-conversation",
+      "situation": "Authoritative provider or transport state says the outbound call failed before a conversation was established.",
+      "must": [
+        "report a technical provider or transport call failure",
+        "keep the delegated task uncompleted",
+        "avoid attributing the failure to recipient choice"
+      ],
+      "mustNot": [
+        "report no-answer merely because no conversation happened",
+        "report that the recipient declined",
+        "claim the task failed semantically when another work path may remain"
+      ]
+    },
+    {
+      "id": "connected-but-task-incomplete",
+      "situation": "The call connected and Concierge spoke with the restaurant, but the line disconnected before the reservation was confirmed.",
+      "must": [
+        "report that the call connected but the reservation remains incomplete or blocked",
+        "separate the known transport outcome from the unresolved semantic task outcome",
+        "continue or disposition surviving work through the normal native closed-loop path"
+      ],
+      "mustNot": [
+        "treat connection as reservation success",
+        "treat hangup as task completion",
+        "invent a confirmation that was never obtained"
+      ]
+    },
+    {
+      "id": "ambiguous-response-after-dial",
+      "situation": "The outbound call response was lost after the carrier may already have accepted or progressed the attempt, and authoritative terminal state is not yet known.",
+      "must": [
+        "classify the effect as uncertain rather than failed unanswered declined connected or completed",
+        "reconcile authoritative state before deciding what happened",
+        "reuse the same operation identity for an identical retry of the uncertain intended effect"
+      ],
+      "mustNot": [
+        "generate a fresh operation ID and blindly dial again",
+        "tell the owner the call failed solely because the response was lost",
+        "collapse uncertainty into no-answer"
+      ]
+    },
+    {
+      "id": "voicemail-message-not-task-completion",
+      "situation": "Concierge reaches voicemail and leaves an authorized message asking the restaurant to call back about a reservation.",
+      "must": [
+        "report that voicemail was reached and a message was left",
+        "keep the reservation task pending unless leaving the message itself was the requested objective",
+        "use native defer recheck or callback semantics for surviving work"
+      ],
+      "mustNot": [
+        "call the reservation completed",
+        "treat voicemail as an asynchronous voice note",
+        "fall back to SMS or MMS"
+      ]
+    }
+  ]
+}

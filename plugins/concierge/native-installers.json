@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "pluginVersion": "0.1.0-alpha.82",
+  "status": "macos-release-customer-acceptance-pending",
+  "hashAlgorithm": "sha256",
+  "references": [
+    {
+      "platform": "macos",
+      "architecture": "arm64",
+      "minimumOsVersion": "13.0",
+      "minimumCodexVersion": "0.146.0-alpha.3.1",
+      "packageFormat": "tar.gz",
+      "payloadPath": "payload/concierge-host",
+      "installerPath": "install.sh",
+      "signatureRequirement": "Developer ID Application, hardened runtime, and notarization",
+      "installerUrl": "https://github.com/Miguelosaurus/concierge-codex-plugin/releases/download/v0.1.0-alpha.82/concierge-native-host-0.1.0-alpha.82-macos-arm64.tar.gz",
+      "archiveSha256": "8457389a8b80ec4696d4c362e3203721ef37eb0f86a3f00ea16dfd98357be13d",
+      "status": "published-artifact-customer-acceptance-pending",
+      "reason": "Signed and notarized Alpha82 artifact. Fresh-customer installation acceptance remains pending.",
+      "bundledNodeMajor": 22,
+      "externalNodeRequired": false
+    },
+    {
+      "platform": "windows",
+      "architecture": "x64",
+      "minimumOsVersion": "10.0.19041",
+      "minimumCodexVersion": "0.146.0-alpha.3.1",
+      "packageFormat": "zip",
+      "payloadPath": "payload/concierge-host.exe",
+      "installerPath": "install.ps1",
+      "signatureRequirement": "Authenticode signing with a trusted timestamp",
+      "installerUrl": null,
+      "archiveSha256": null,
+      "status": "unsupported-in-this-release",
+      "reason": "This beta supports Apple silicon Macs only.",
+      "bundledNodeMajor": 22,
+      "externalNodeRequired": false
+    },
+    {
+      "platform": "linux",
+      "architecture": "x64",
+      "minimumOsVersion": "glibc-2.31",
+      "minimumCodexVersion": "0.146.0-alpha.3.1",
+      "packageFormat": "tar.gz",
+      "payloadPath": "payload/concierge-host",
+      "installerPath": "install.sh",
+      "signatureRequirement": "Promoted artifact integrity and matching ELF architecture",
+      "installerUrl": null,
+      "archiveSha256": null,
+      "status": "unsupported-in-this-release",
+      "reason": "This beta supports Apple silicon Macs only.",
+      "bundledNodeMajor": 22,
+      "externalNodeRequired": false
+    },
+    {
+      "platform": "linux",
+      "architecture": "arm64",
+      "minimumOsVersion": "glibc-2.31",
+      "minimumCodexVersion": "0.146.0-alpha.3.1",
+      "packageFormat": "tar.gz",
+      "payloadPath": "payload/concierge-host",
+      "installerPath": "install.sh",
+      "signatureRequirement": "Promoted artifact integrity and matching ELF architecture",
+      "installerUrl": null,
+      "archiveSha256": null,
+      "status": "unsupported-in-this-release",
+      "reason": "This beta supports Apple silicon Macs only.",
+      "bundledNodeMajor": 22,
+      "externalNodeRequired": false
+    }
+  ],
+  "readyRules": {
+    "installerUrl": "A ready reference must be an HTTPS URL without credentials, query, or fragment.",
+    "archiveSha256": "A ready reference must carry 64 lower-case hexadecimal SHA-256 characters verified against the downloaded archive.",
+    "compatibility": "A supported reference must match package version, protocol, platform, architecture, OS floor, bundled Node version, and Codex floor.",
+    "signing": "A ready reference must name the platform signing and physical acceptance evidence for the exact archive."
+  }
+}

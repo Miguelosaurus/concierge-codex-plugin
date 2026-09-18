@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "plugin": {
+    "name": "concierge",
+    "version": "0.1.0-alpha.82",
+    "layout": "plugins/concierge",
+    "compatibilityManifest": "./.codex-plugin/plugin.json",
+    "hooks": "./hooks/hooks.json",
+    "skills": "./skills/",
+    "mcp": "./mcp.json",
+    "appReference": null,
+    "license": "UNLICENSED",
+    "licenseModel": "proprietary",
+    "licenseNotice": "./LICENSE.md"
+  },
+  "hostedConnection": {
+    "service": "Concierge hosted MCP",
+    "endpoint": "https://mcp.dialconcierge.com/mcp",
+    "serverName": "concierge",
+    "connection": "direct-remote-mcp",
+    "stateless": true,
+    "authentication": {
+      "protocol": "OAuth 2.1",
+      "pkce": "S256",
+      "requestScoped": true,
+      "resourceAudience": "https://mcp.dialconcierge.com/mcp",
+      "issuer": "https://passionate-style-89.authkit.app",
+      "issuerDiscovery": "protected-resource-metadata",
+      "registration": "dynamic-client-registration",
+      "credentialsInPackage": false,
+      "clientIdInPackage": false,
+      "redirectUriInPackage": false,
+      "requiredScope": "openid"
+    },
+    "portableMcpServers": 1,
+    "appConnection": "not included"
+  },
+  "nativeHost": {
+    "requiredFor": "Effectful phone and owner-authority tools",
+    "protocolVersion": 1,
+    "minimumCodexVersion": "0.146.0-alpha.3.1",
+    "supportedPlatforms": [
+      {
+        "platform": "macos",
+        "architecture": "arm64",
+        "minimumOsVersion": "13.0"
+      }
+    ],
+    "installerReferences": "./native-installers.json",
+    "rootAttestation": {
+      "directMcpToolPrefix": "mcp__concierge__",
+      "canonicalToolNames": "bare Concierge tool names",
+      "proofInputBinding": "exact tool input digest and native root/session/turn/tool-use binding"
+    },
+    "bundledNodeMajor": 22,
+    "externalNodeRequired": false
+  },
+  "sourcePolicy": {
+    "packageOnly": [
+      ".codex-plugin",
+      "skills",
+      "hooks",
+      "assets",
+      "mcp.json",
+      "PUBLIC_INSTALL.md",
+      "LICENSE.md",
+      "distribution.json",
+      "native-installers.json",
+      "runtime"
+    ],
+    "excludedFromPackage": [
+      "src",
+      "convex",
+      "cloudflare",
+      "web",
+      "config",
+      "test",
+      "docs",
+      "evidence"
+    ],
+    "applicationSourceIncluded": false
+  },
+  "access": {
+    "status": "github-beta",
+    "publicInstall": "github-marketplace",
+    "nativeInstall": "plugin-contained-compressed-runtime",
+    "unresolved": [
+      "Fresh-account OAuth and customer installation acceptance remain to be completed."
+    ]
+  }
+}

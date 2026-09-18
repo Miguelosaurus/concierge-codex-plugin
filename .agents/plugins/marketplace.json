@@ -1,0 +1,20 @@
+{
+  "name": "concierge",
+  "interface": {
+    "displayName": "Concierge"
+  },
+  "plugins": [
+    {
+      "name": "concierge",
+      "source": {
+        "source": "local",
+        "path": "./plugins/concierge"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

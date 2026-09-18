@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "product": "concierge-native-host",
+  "productVersion": "0.1.0-alpha.82",
+  "protocolVersion": 1,
+  "platform": "macos",
+  "architecture": "arm64",
+  "buildSha": "91da2861507b7524108d8cefcf275c5e59754ab6",
+  "packageFormat": "tar.gz",
+  "minimumOsVersion": "13.0",
+  "minimumNodeMajor": 22,
+  "minimumCodexVersion": "0.146.0-alpha.3.1",
+  "payloadFile": "payload/concierge-host",
+  "payloadSha256": "b7741138683dc3b42f56f0fa3740c70d1cff24af1fcdfe83a30081224972b5a9",
+  "runtimeFiles": [
+    {
+      "file": "payload/node_modules/@roamhq/wrtc-darwin-arm64/README.md",
+      "sha256": "a0059e90b7241119aec30e973537edbf931daca13e23131e5efd166c863b54eb"
+    },
+    {
+      "file": "payload/node_modules/@roamhq/wrtc-darwin-arm64/index.js",
+      "sha256": "6d77257c9d50361fcc2286ed02bbcb0ffda7ffa204211d05c51b21c22e3b02fe"
+    },
+    {
+      "file": "payload/node_modules/@roamhq/wrtc-darwin-arm64/package.json",
+      "sha256": "5cc6f296b2d6d0a3972a6df2fbb7aa903c4481c9e1939f9d6d0e7b390f09136e"
+    },
+    {
+      "file": "payload/node_modules/@roamhq/wrtc-darwin-arm64/wrtc.node",
+      "sha256": "af35771d88c49a340ece296d7be5586610932bbf5a90124c547a04521fe4c992"
+    },
+    {
+      "file": "payload/node_modules/@roamhq/wrtc/AUTHORS",
+      "sha256": "1edd59b1ff7cc364051a89ba410d037e5626d3f95f4f24a96cb33e599364e2c7"
+    },
+    {
+      "file": "payload/node_modules/@roamhq/wrtc/CHANGELOG.md",
+      "sha256": "ae7764fd9738bfca7e60e0bac7fb3ba4d02b193facdbcfaa47fc878127e25390"
+    },
+    {
+      "file": "payload/node_modules/@roamhq/wrtc/LICENSE.md",
+      "sha256": "f60b9f48f13ae3244e461b650605addf2e499b290f7434cefd59c5b50f027290"
+    },
+    {
+      "file": "payload/node_modules/@roamhq/wrtc/README.md",
+      "sha256": "d09de46e2eb6224cc6891928684ff68bab32fb041fe41f071a4ca45ca53d5f24"
+    },
+    {
+      "file": "payload/node_modules/@roamhq/wrtc/lib/binding.js",
+      "sha256": "855729de6ed99559225d489ca316421e05d5dbc950578017ebe5be7eff2c9475"
+    },
+    {
+      "file": "payload/node_modules/@roamhq/wrtc/lib/browser.js",
+      "sha256": "b39d3f5606da5d31702da82f75cbbc41d3edc7bce8041f19c26be146cd21bb2e"
+    },
+    {
+      "file": "payload/node_modules/@roamhq/wrtc/lib/datachannelevent.js",
+      "sha256": "3c68e710ee352bbfa9f47a46a915a595899c74c2f82a676f7d4fbcea2db28041"
+    },
+    {
+      "file": "payload/node_modules/@roamhq/wrtc/lib/datachannelmessageevent.js",
+      "sha256": "53436df6b796d413ca0e94294f21ebe7c5e9ae73b0af7bcd8aca951f88bd514d"
+    },
+    {
+      "file": "payload/node_modules/@roamhq/wrtc/lib/error.js",
+      "sha256": "4df8733d81ebb929b095d26ae9037ecc642338a47146358261a481cf75a4fe21"
+    },
+    {
+      "file": "payload/node_modules/@roamhq/wrtc/lib/eventtarget.js",
+      "sha256": "9771b85de597873816e5abeac68d5cb1b159e66d0e65f2895145b1286d45cb42"
+    },
+    {
+      "file": "payload/node_modules/@roamhq/wrtc/lib/icecandidate.js",
+      "sha256": "4e46a3702e3af8b85119304f39a1ac90a2e35157babf2ea5b50ddd45c7b14b0c"
+    },
+    {
+      "file": "payload/node_modules/@roamhq/wrtc/lib/index.js",
+      "sha256": "3340521d1c72f51f6ab9eade422270b5764e8eb2acf8474a451399d77957a12f"
+    },
+    {
+      "file": "payload/node_modules/@roamhq/wrtc/lib/mediadevices.js",
+      "sha256": "644f6e9c1c56cf5e427d6a1ddd1a988dd5bf967d6b5d1bd1f752d35031f5b864"
+    },
+    {
+      "file": "payload/node_modules/@roamhq/wrtc/lib/peerconnection.js",
+      "sha256": "f7f0b6e979971aaffeae63b5485c0d6cb6e6d5cbf774838a97aae7478bf1bf44"
+    },
+    {
+      "file": "payload/node_modules/@roamhq/wrtc/lib/rtcpeerconnectioniceerrorevent.js",
+      "sha256": "cb50427826edc60d2a70bcb9de2bdef0383d9f705a68a714985cce5c48928b2f"
+    },
+    {
+      "file": "payload/node_modules/@roamhq/wrtc/lib/rtcpeerconnectioniceevent.js",
+      "sha256": "a0acbea6fb7884d40cca997a23a3e144fa025e248e4fa1302242f728aa3ecc19"
+    },
+    {
+      "file": "payload/node_modules/@roamhq/wrtc/lib/sessiondescription.js",
+      "sha256": "e189f9a88ff070e228595962cc6cdcca7527645fd788e56e74d22f3597b4f768"
+    },
+    {
+      "file": "payload/node_modules/@roamhq/wrtc/package.json",
+      "sha256": "c7a3d1001979e2b362874854ab294713cf8ac984260917aedf05333bd2f3952e"
+    },
+    {
+      "file": "payload/node_modules/@roamhq/wrtc/types/index.d.ts",
+      "sha256": "53757fd44902c2ea9e06ca7a7e3975997b01c812453b75001891338d0cb2035d"
+    },
+    {
+      "file": "payload/node_modules/@roamhq/wrtc/types/nonstandard.d.ts",
+      "sha256": "997f1b5a6d4e56312893176aeec8d0fa68edbe1b8b0ad3b408c776b8f94b10e8"
+    }
+  ],
+  "nativeAddonFile": "payload/node_modules/@roamhq/wrtc-darwin-arm64/wrtc.node",
+  "nativeAddonSha256": "af35771d88c49a340ece296d7be5586610932bbf5a90124c547a04521fe4c992",
+  "processHelperFile": "payload/concierge-process-info",
+  "processHelperSha256": "e117e7fae332cbde79f9bae2a323efc5c7f17a6641f32f514cdab0cf18038bfb",
+  "signing": {
+    "state": "notarized",
+    "identity": "Developer ID Application: SEA & SEA LLC (F5786NY22N)",
+    "timestamped": true,
+    "productionReady": true,
+    "verification": {
+      "verifier": "concierge-native-host-signing-v1",
+      "payloadSha256": "b7741138683dc3b42f56f0fa3740c70d1cff24af1fcdfe83a30081224972b5a9",
+      "architectureVerified": true,
+      "nativeAddonSha256": "af35771d88c49a340ece296d7be5586610932bbf5a90124c547a04521fe4c992",
+      "nativeAddonArchitectureVerified": true,
+      "macos": {
+        "codesignVerified": true,
+        "developerIdApplication": true,
+        "hardenedRuntime": true,
+        "allowJit": true,
+        "notarizationAccepted": true,
+        "staple": "not-applicable",
+        "processHelperSha256": "e117e7fae332cbde79f9bae2a323efc5c7f17a6641f32f514cdab0cf18038bfb",
+        "processHelperIdentifier": "com.concierge.native-host.process-info",
+        "processHelperCodesignVerified": true,
+        "processHelperDeveloperIdMatched": true,
+        "processHelperHardenedRuntime": true,
+        "processHelperNotarizationAccepted": true,
+        "nativeAddonCodesignVerified": true,
+        "nativeAddonDeveloperIdMatched": true,
+        "nativeAddonHardenedRuntime": true,
+        "nativeAddonNotarizationAccepted": true
+      }
+    }
+  },
+  "supportStatus": "requires-physical-os-proof",
+  "verification": {
+    "artifactBuilt": true,
+    "packageStaticValidation": true,
+    "installSmoke": "simulated"
+  }
+}

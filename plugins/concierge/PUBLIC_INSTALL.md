@@ -28,7 +28,7 @@ Concierge includes the signed computer helper. To connect your Mac:
 
 1. In Codex on the Mac you want to connect, say "Connect this computer".
 2. The plugin installs its included helper and opens the secure browser flow.
-3. Sign in and approve the computer connection in the browser.
+3. Approve the computer using the six-digit code shown on your Mac. Your existing Concierge website session is used; sign in only if that session has expired.
 4. Check [your computers](https://dialconcierge.com/account/computers) for the
    Mac you just connected. Continue account setup when that Mac is ready.
 
@@ -42,7 +42,7 @@ When a new release is available, run these commands in Terminal:
 
 ```sh
 codex plugin marketplace remove concierge
-codex plugin marketplace add https://github.com/Miguelosaurus/concierge-codex-plugin --ref v0.1.0-alpha.83
+codex plugin marketplace add https://github.com/Miguelosaurus/concierge-codex-plugin --ref v0.1.0-alpha.84
 codex plugin add concierge@concierge
 ```
 

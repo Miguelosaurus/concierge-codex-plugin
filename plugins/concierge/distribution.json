@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "concierge",
-    "version": "0.1.0-alpha.82",
+    "version": "0.1.0-alpha.84",
     "layout": "plugins/concierge",
     "compatibilityManifest": "./.codex-plugin/plugin.json",
     "hooks": "./hooks/hooks.json",

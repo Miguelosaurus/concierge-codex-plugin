@@ -9,9 +9,19 @@ Connecting another computer is separate from first-account setup. Point to [Comp
 For a request about **this computer**, overall setup, capabilities, and account
 status are account-scoped and may describe a different connected computer.
 They cannot replace the local hook flow or prove that the intended computer was
-paired. If installing or enabling Concierge was the current task, open a fresh
-Codex task with Concierge active and send exactly **“Connect this computer”**;
-the earlier install prompt cannot retroactively run the newly installed hook.
+paired. If installing or enabling Concierge was the current task, continue only
+after the supported local review step. Installation does not trust plugin hooks.
+Ask the user to close and reopen Codex, open the Concierge plugin details, and
+use its Hooks row. It reports the definitions that need review and offers
+**Review** and **Trust all**. Inspect the six current Concierge definitions with
+**Review**, then choose **Trust all**. The equivalent detailed path is Codex
+Settings → Hooks → From Plugins → Concierge, where each definition has its own
+**Trust** action. Then open a fresh task with Concierge active and send exactly
+**“Connect this computer”**; the earlier install prompt cannot retroactively run
+the newly installed hook. Do not write hook trust into configuration, use a
+trust-bypass flag, or accept chat consent as the native review decision. If the
+review screen is unavailable, say so and stop rather than sending the user
+through a terminal setup checklist or inferring readiness from account state.
 After the hook flow, verify the intended computer through the connected-computer
 projection before describing it as connected.
 

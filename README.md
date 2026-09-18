@@ -33,8 +33,8 @@ and install Concierge.
 
 With Concierge installed and active, enable its hooks and
 say "Connect this computer" in Codex. The plugin installs its included
-computer helper and opens browser approval. Sign in with your Concierge
-account, approve the connection, and check that your computer is ready.
+computer helper and opens Concierge for approval using your existing website
+sign-in. Approve the connection, then check that this computer is ready.
 
 ## Updates
 

@@ -22,13 +22,32 @@ For “Help me finish setting up Concierge with a short onboarding call,” a fi
 2. If status asks for target or computer readiness, use the supported Codex path. **Current beta phone target: Codex only**, and only a paired native host that is ready can carry live phone work.
 3. When local readiness is required, tell the user to open Codex on the desired computer with the installed Concierge plugin selected and active and issue exactly **“Connect this computer”**. Browser setup cannot install the plugin and ordinary ChatGPT cannot execute the local lifecycle hook. Keep pairing/device/bearer material out of chat.
    If Concierge was installed or enabled during the current task, its lifecycle
-   hook did not run for the prompt that preceded installation. End the install
-   handoff by asking the user to open a fresh Codex task with Concierge active
-   and send exactly **“Connect this computer”**. Never replace that fresh local
-   hook invocation with account-status reads or claim the current computer is
-   connected because the account is already ready.
+   hook did not run for the prompt that preceded installation. Installation also
+   does not trust plugin hooks. Pause here and explain the one required approval:
+   Concierge contributes six local lifecycle hooks (`SessionStart`,
+   `UserPromptSubmit`, `PreToolUse`, `SubagentStart`, `SubagentStop`, and
+   `Stop`), and Codex must expose their exact current definitions in its own
+   hook-review UI. Ask the user to close and reopen Codex so the newly installed
+   plugin is loaded, open the Concierge plugin details, and use the Hooks row:
+   it reports how many hooks need review and offers **Review** and **Trust all**.
+   Have the user inspect the six definitions with **Review**, then choose
+   **Trust all**. The equivalent detailed path is Codex Settings → Hooks → From
+   Plugins → Concierge, where each current definition has its own **Trust**
+   action. Then have them open a
+   fresh Codex task with Concierge active and send exactly **“Connect this
+   computer”**. Keep this to one clear user approval; do not send them through a
+   terminal checklist.
+
+   The agent may explain the hook purposes and wait, but it must not treat a
+   conversational “yes” as Codex hook trust, write `trusted_hash` values, use a
+   hook-trust bypass flag, or hide the review because the package is visible on
+   GitHub. If Codex does not present its native review screen after relaunch,
+   report that the local hook approval surface is unavailable and stop the
+   connection handoff. Never replace the trusted fresh local hook invocation
+   with account-status reads or claim the current computer is connected because
+   the account is already ready.
 4. When the state requires entitlement, owner possession, phone identity, or capability reconciliation, perform only the exact supported next action. Existing entitlement and retained identity are authoritative. Paid phone acquisition is outside the plugin: do not display plans, promote an upgrade, initiate a purchase, link to checkout or a setup URL that leads to purchase, search, quote, buy, or bypass that boundary. Never request payment material in chat.
-5. Require durable native readiness and adapter preflight before promising Voice. The native-host pairing and target-neutral native adapter preflight may use WorkOS device authorization, secure OS credential storage, service startup, and adapter checks; these are adapter internals, not consumer setup steps. A redirect, hook marker, physical DID feature, purchased-but-pending number, or model assertion is not readiness.
+5. Require durable native readiness and adapter preflight before promising Voice. The native-host pairing and target-neutral native adapter preflight uses the existing Concierge browser session for connection approval, secure OS credential storage, service startup, and adapter checks; these are adapter internals, not consumer setup steps. A redirect, hook marker, physical DID feature, purchased-but-pending number, or model assertion is not readiness.
 6. Read status again and report its one truthful result. A pending/blocked state names the exact next action and reason; a ready state names only the capability actually ready. A zero-spend native preflight proves compatibility/readiness only, not entitlement, owner authority, phone inventory, PSTN capacity, or a live call.
 
 ## Hard setup boundaries

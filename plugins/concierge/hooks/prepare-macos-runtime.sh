@@ -33,9 +33,9 @@ NR==4 {if(NF!=3||$1!="gzip"||!sha($2)||!number($3)||$3<1||$3>=104857600)bad();ne
 NR>4 {
  if(NF!=5||$1!="file"||($2!="644"&&$2!="755")||!sha($3)||!number($4))bad()
  p=$5;if(p~/[^A-Za-z0-9._@\/-]/||p~/^\//||p~/\/$/||p~/\/\//||p~/(^|\/)\.\.?($|\/)/||seen[p]++)bad()
- if(p!="concierge-host"&&p!="concierge-process-info"&&p!="release-manifest.json"&&p!~/^node_modules\/@roamhq\/(wrtc|wrtc-darwin-arm64)\//)bad()
- if((p=="concierge-host"||p=="concierge-process-info")&&$2!="755")bad()
- if(p!="concierge-host"&&p!="concierge-process-info"&&$2!="644")bad()
+ if(p!="concierge-host"&&p!="concierge-process-info"&&p!="release-manifest.json"&&p!~/^node_modules\/@roamhq\/(wrtc|wrtc-darwin-arm64)\//&&p!~/^node_modules\/@concierge\/pairing-ui\/ConciergeSetup\.app\/Contents\/(Info\.plist|MacOS\/ConciergeSetup|_CodeSignature\/CodeResources)$/)bad()
+ if((p=="concierge-host"||p=="concierge-process-info"||p=="node_modules/@concierge/pairing-ui/ConciergeSetup.app/Contents/MacOS/ConciergeSetup")&&$2!="755")bad()
+ if(p!="concierge-host"&&p!="concierge-process-info"&&p!="node_modules/@concierge/pairing-ui/ConciergeSetup.app/Contents/MacOS/ConciergeSetup"&&$2!="644")bad()
  if($4>268435456)bad();total+=$4;if(total>314572800||NR>516)bad()
 }
 END {if(NR<8||!seen["concierge-host"]||!seen["concierge-process-info"]||!seen["release-manifest.json"]||!seen["node_modules/@roamhq/wrtc-darwin-arm64/wrtc.node"])exit 1}
@@ -77,12 +77,13 @@ verify_files() {
 verify_signatures() {
   TREE=$1
   REQUIREMENT='=anchor apple generic and certificate leaf[subject.OU] = "F5786NY22N" and certificate leaf[field.1.2.840.113635.100.6.1.13] exists'
-  for FILE in concierge-host concierge-process-info node_modules/@roamhq/wrtc-darwin-arm64/wrtc.node; do
+  for FILE in concierge-host concierge-process-info node_modules/@roamhq/wrtc-darwin-arm64/wrtc.node node_modules/@concierge/pairing-ui/ConciergeSetup.app; do
     /usr/bin/codesign --verify --strict -R "$REQUIREMENT" "$TREE/$FILE" || fail signature
     DETAILS=$(/usr/bin/codesign --display --verbose=4 "$TREE/$FILE" 2>&1) || fail signature-inspection
     printf '%s\n' "$DETAILS" | /usr/bin/grep -q '^Authority=Developer ID Application: SEA & SEA LLC (F5786NY22N)$' || fail signer
     printf '%s\n' "$DETAILS" | /usr/bin/grep -q '^CodeDirectory .*flags=.*runtime' || fail hardened-runtime
   done
+  /usr/bin/codesign --verify --strict -R '=identifier "com.concierge.setup"' "$TREE/node_modules/@concierge/pairing-ui/ConciergeSetup.app" || fail pairing-ui-identity
   /usr/bin/codesign --verify --strict -R '=identifier "com.concierge.native-host.process-info"' "$TREE/concierge-process-info" || fail helper-identity
 }
 if [ ! -e "$TARGET" ] && [ ! -L "$TARGET" ]; then

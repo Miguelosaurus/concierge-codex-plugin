@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pluginVersion": "0.1.0-alpha.85",
+  "pluginVersion": "0.1.0-alpha.86",
   "status": "macos-release-customer-acceptance-pending",
   "hashAlgorithm": "sha256",
   "references": [
@@ -13,10 +13,10 @@
       "payloadPath": "payload/concierge-host",
       "installerPath": "install.sh",
       "signatureRequirement": "Developer ID Application, hardened runtime, and notarization",
-      "installerUrl": "https://github.com/Miguelosaurus/concierge-codex-plugin/releases/download/v0.1.0-alpha.85/concierge-native-host-0.1.0-alpha.85-macos-arm64.tar.gz",
-      "archiveSha256": "3246d71bfa53336d3efb4556d75893930fab31fe503e66cefd048f5022706734",
+      "installerUrl": "https://github.com/Miguelosaurus/concierge-codex-plugin/releases/download/v0.1.0-alpha.86/concierge-native-host-0.1.0-alpha.86-macos-arm64.tar.gz",
+      "archiveSha256": "802739c4e247c0c7daed55ae9801456a1321bb230043e1c30f8b0213feacbb67",
       "status": "published-artifact-customer-acceptance-pending",
-      "reason": "Signed and notarized Alpha85 artifact. Fresh-customer installation acceptance remains pending.",
+      "reason": "Signed and notarized Alpha86 artifact. Fresh-customer installation acceptance remains pending.",
       "bundledNodeMajor": 22,
       "externalNodeRequired": false
     },

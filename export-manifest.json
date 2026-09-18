@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "kind": "concierge-codex-marketplace-export",
-  "sourceCommit": "2d4b4f43c8e015ed6c39e7a2ddbe77c216aff772",
+  "sourceCommit": "ab7da35085fcb78112757d35488596dce04bf0d4",
   "sourceSelection": {
-    "skillsAndHooks": "skills and hooks from approved source 2d4b4f43c8e015ed6c39e7a2ddbe77c216aff772",
+    "skillsAndHooks": "skills and hooks from approved source ab7da35085fcb78112757d35488596dce04bf0d4",
     "publicPresentationBase": "3934d90680adef90f492975de08e24b6e1363cfb",
     "connection": "preserved direct MCP OAuth variant",
     "nativeRuntimeIncluded": true
@@ -22,7 +22,7 @@
   },
   "plugin": {
     "name": "concierge",
-    "version": "0.1.0-alpha.85",
+    "version": "0.1.0-alpha.86",
     "packageFileCount": 69,
     "repositoryField": "public-release",
     "mcp": "plugins/concierge/mcp.json",
@@ -35,7 +35,7 @@
     "status": "published",
     "repositoryUrl": "https://github.com/Miguelosaurus/concierge-codex-plugin",
     "marketplacePublicationUrl": "https://github.com/Miguelosaurus/concierge-codex-plugin",
-    "candidateRef": "v0.1.0-alpha.85"
+    "candidateRef": "v0.1.0-alpha.86"
   },
   "license": {
     "manifestValue": "UNLICENSED",
